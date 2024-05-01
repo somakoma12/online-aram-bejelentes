@@ -1,0 +1,50 @@
+<div>
+<h1>Tisztességesen jelenti be az áramot?</h1>
+</div>
+
+<!--
+<select #pageValue (change)="oszinteseg=pageValue.value">
+    
+</select>
+-->
+
+<div>
+    <mat-form-field>
+        <mat-select [(value)]="oszinteseg">
+            <mat-option value=""></mat-option>
+            <mat-option value="igen">Igen</mat-option>
+            <mat-option value="nem">Nem</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div>
+<app-valasztoeredmeny [erkolcsv]="oszinteseg"></app-valasztoeredmeny>
+</div>
+<div class="break"></div>
+
+
+
+
+<div>
+    <h1>Áram lejelentés</h1>
+    <label for="aram">Áram: </label>
+    <input type="text" [(ngModel)]="aramjelentes" />
+</div>
+<div>
+    <button (click)="addAram()">KÜLDÉS</button>
+    <ng-template [ngIf]="jelentescl.ora.kwhallas != -1">
+        <p>{{jelentescl.ora.kwhallas| aramErtek}}, {{jelentescl.ido}}</p>
+    </ng-template>
+
+</div>
+
+<div>
+    <p>Számunkra fontos további információt ebbe a kommentbe írja:</p>
+    <textarea rows="10" cols="50" [(ngModel)]="fontoskomment"></textarea>
+</div>
+<div>
+    <button (click)="addComment()">KÜLDÉS</button>
+    <ng-template [ngIf]="kommentcl.comment != ''">
+        <p>A komment: {{kommentcl.comment}}</p>
+    </ng-template>
+</div>

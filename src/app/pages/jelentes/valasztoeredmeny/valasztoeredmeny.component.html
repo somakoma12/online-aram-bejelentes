@@ -1,0 +1,15 @@
+<div [ngStyle]="{'color' : erkolcsv === 'igen' ? 'green' : 'red'}">
+    <ng-container [ngSwitch]="erkolcsv">
+        <ng-container *ngSwitchCase="'nem'">
+            <p >Ezt továbbítjuk a rendőröknek!</p>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'igen'">
+            <p>Ez így a helyes</p>
+        </ng-container>
+
+        <ng-container *ngSwitchDefault>
+            <p>Jól gondold meg mit válaszolsz!</p>
+        </ng-container>
+    </ng-container>
+</div>

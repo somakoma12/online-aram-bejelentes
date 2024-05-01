@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "harmadikwebkertram": {
+      "hosting": {
+        "online-aram-bejelentes": [
+          "harmadikwebkertram"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "harmadikwebkertram"
+  }
+}
